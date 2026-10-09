@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Panduan tidak resmi berbahasa Indonesia untuk mendaftar S2 Biologi di Universitas Tsukuba.">
+<title>Panduan S2 Biologi Tsukuba</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: one reading column (~46rem) with a sticky section nav; the lecturer directory widens to a two-column card grid. */
+:root{
+  --bg:#F3F6F3; --surface:#FFFFFF; --ink:#16211C; --muted:#56655D; --line:#D3DDD6;
+  --accent:#0D6A56; --accent-ink:#FFFFFF; --accent-soft:#DCEEE6;
+  --ok:#1E7A48; --ok-soft:#E1F2E7; --est:#9A5B06; --est-soft:#FBEFD9; --unk:#5E6274; --unk-soft:#E9EAF0; --warn:#A8261D; --warn-soft:#FBE6E3;
+  --f-display:"Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --f-body:"Atkinson Hyperlegible", "Segoe UI", Roboto, Arial, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --radius:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F1613; --surface:#17211C; --ink:#E5EEE8; --muted:#9DB0A5; --line:#2C3A33;
+  --accent:#4FC2A1; --accent-ink:#06231B; --accent-soft:#183A30;
+  --ok:#6FD39A; --ok-soft:#173225; --est:#F0B45A; --est-soft:#3A2A10; --unk:#B2B6C8; --unk-soft:#272A35; --warn:#FF8A7E; --warn-soft:#3D1A17;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1613; --surface:#17211C; --ink:#E5EEE8; --muted:#9DB0A5; --line:#2C3A33;
+  --accent:#4FC2A1; --accent-ink:#06231B; --accent-soft:#183A30;
+  --ok:#6FD39A; --ok-soft:#173225; --est:#F0B45A; --est-soft:#3A2A10; --unk:#B2B6C8; --unk-soft:#272A35; --warn:#FF8A7E; --warn-soft:#3D1A17;
+  color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6;padding-inline:16px;padding-block:0 64px}
+a{color:var(--accent);text-underline-offset:2px}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.2;margin:0}
+h1{font-size:clamp(2rem,6vw,3rem);font-weight:700;letter-spacing:-.01em}
+h2{font-size:1.65rem;font-weight:700}
+h3{font-size:1.15rem;font-weight:700}
+p{margin:0}
+.wrap{max-width:46rem;margin-inline:auto}
+.wide{max-width:64rem;margin-inline:auto}
+header.hero{padding-block:40px 28px;display:grid;gap:14px}
+.eyebrow{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.lede{font-size:1.12rem;color:var(--ink);max-width:40rem}
+.legend{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:.9rem;color:var(--muted)}
+.tag{display:inline-flex;align-items:center;gap:4px;font-family:var(--f-mono);font-size:.72rem;font-weight:500;letter-spacing:.03em;padding:2px 8px;border-radius:999px;white-space:nowrap;vertical-align:middle}
+.t-ok{background:var(--ok-soft);color:var(--ok)}
+.t-est{background:var(--est-soft);color:var(--est)}
+.t-unk{background:var(--unk-soft);color:var(--unk)}
+.t-warn{background:var(--warn-soft);color:var(--warn)}
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding-inline:16px}
+nav.toc ul{list-style:none;margin:0 auto;padding:10px 0;display:flex;gap:6px;overflow-x:auto;max-width:64rem;scrollbar-width:thin}
+nav.toc a{display:block;white-space:nowrap;padding:6px 12px;border-radius:999px;text-decoration:none;color:var(--ink);font-size:.92rem;border:1px solid var(--line);background:var(--surface)}
+nav.toc a:hover{border-color:var(--accent);color:var(--accent)}
+section{padding-block:44px 8px;scroll-margin-top:64px}
+section > .wrap, section > .wide{display:grid;gap:18px}
+.sec-head{display:grid;gap:6px}
+.sec-head p{color:var(--muted)}
+.keys{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+.key{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;display:grid;gap:6px;align-content:start;min-width:0}
+.key strong{font-family:var(--f-display);font-size:1.05rem}
+.callout{border-radius:var(--radius);padding:16px 18px;display:grid;gap:8px}
+.callout.warn{background:var(--warn-soft);color:var(--ink);border:1px solid color-mix(in srgb,var(--warn) 35%,transparent)}
+.callout.info{background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent)}
+.callout strong.h{font-family:var(--f-display);font-size:1.05rem}
+ul.plain{margin:0;padding-left:1.2em;display:grid;gap:6px}
+ol.plain{margin:0;padding-left:1.4em;display:grid;gap:8px}
+/* timeline */
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tabs button{font:inherit;font-size:.95rem;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.tl{list-style:none;margin:0;padding:0;display:grid;gap:0;border-left:2px solid var(--line);margin-left:6px}
+.tl li{position:relative;padding:0 0 22px 22px;display:grid;gap:4px}
+.tl li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--accent)}
+.tl li.big::before{background:var(--accent)}
+.tl .when{font-family:var(--f-mono);font-size:.82rem;color:var(--accent);font-variant-numeric:tabular-nums;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tl .what{font-weight:700}
+.tl .det{color:var(--muted);font-size:.95rem}
+/* tables */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.95rem}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+th{font-family:var(--f-display);font-weight:700;background:color-mix(in srgb,var(--accent-soft) 55%,var(--surface))}
+td.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.two{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr))}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;display:grid;gap:10px;align-content:start;min-width:0}
+.panel.hl{border:2px solid var(--accent)}
+/* directory */
+.filters{display:grid;gap:10px}
+.search{width:100%;font:inherit;padding:10px 14px;border-radius:var(--radius);border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font:inherit;font-size:.86rem;padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.count{font-family:var(--f-mono);font-size:.82rem;color:var(--muted)}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(19rem,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;display:grid;gap:8px;align-content:start;min-width:0}
+.card .nm{font-family:var(--f-display);font-weight:700;font-size:1.08rem;line-height:1.25}
+.card .jp{color:var(--muted);font-size:.9rem;font-weight:400}
+.card .meta{font-size:.85rem;color:var(--muted)}
+.card .kw{display:flex;flex-wrap:wrap;gap:4px}
+.card .kw span{font-size:.75rem;font-family:var(--f-mono);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:1px 6px}
+.card .links{display:flex;gap:14px;flex-wrap:wrap;font-size:.9rem}
+.card .badges{display:flex;gap:6px;flex-wrap:wrap}
+.card .note{font-size:.85rem;color:var(--muted)}
+.card .note.w{color:var(--warn)}
+details.sj summary{cursor:pointer;font-size:.82rem;color:var(--muted)}
+details.sj p{font-size:.88rem;color:var(--muted)}
+/* email */
+pre.mail{white-space:pre-wrap;word-break:break-word;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;font-family:var(--f-mono);font-size:.85rem;line-height:1.55;margin:0}
+.btn{font:inherit;font-size:.92rem;padding:8px 14px;border-radius:8px;border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);cursor:pointer;justify-self:start}
+.mono{font-family:var(--f-mono);font-size:.9em}
+dl.gl{display:grid;grid-template-columns:minmax(8rem,12rem) 1fr;gap:0;margin:0;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);overflow:hidden}
+dl.gl dt,dl.gl dd{padding:9px 12px;border-bottom:1px solid var(--line);margin:0}
+dl.gl dt{font-weight:700}
+dl.gl dt span{display:block;font-weight:400;font-size:.8rem;color:var(--muted)}
+@media (max-width:520px){dl.gl{grid-template-columns:1fr} dl.gl dt{border-bottom:0;padding-bottom:0}}
+.src{font-size:.88rem;color:var(--muted)}
+.src li{word-break:break-word}
+footer{padding-block:40px 0;color:var(--muted);font-size:.88rem}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+
+img{max-width:100%} [hidden]{display:none!important} body{margin:0}
+</style>
+</head>
+<body>
+
+
+<header class="hero wrap">
+  <span class="eyebrow">Panduan tidak resmi · diperbarui 9 Oktober 2026</span>
+  <h1>Kuliah S2 Biologi di Universitas Tsukuba</h1>
+  <p class="lede">Ringkasan berbahasa Indonesia tentang Program Magister Biologi (生物学学位プログラム) di University of Tsukuba, Jepang: cara mendaftar, ujian, beasiswa MEXT, biaya, dan daftar dosen. Semua informasi diambil dari situs resmi universitas, Kedutaan Besar Jepang di Indonesia, dan MEXT.</p>
+  <div class="legend">
+    <span class="tag t-ok">PASTI</span> tertulis di situs resmi
+    <span class="tag t-est">PERKIRAAN</span> dihitung dari jadwal tahun lalu
+    <span class="tag t-unk">BELUM JELAS</span> perlu ditanyakan
+  </div>
+  <p class="src">Asumsi: kamu ikut ujian masuk pada tahun ajaran 2027 (Agustus 2027 atau Januari 2028) dan mulai kuliah April 2028. Jadwal resmi untuk tahun itu belum terbit, jadi selalu cek ulang situs resmi.</p>
+</header>
+
+<nav class="toc" aria-label="Daftar isi">
+  <ul>
+    <li><a href="#ringkasan">Ringkasan</a></li>
+    <li><a href="#jadwal">Jadwal</a></li>
+    <li><a href="#ujian">Ujian masuk</a></li>
+    <li><a href="#mext">Beasiswa MEXT</a></li>
+    <li><a href="#program">Program</a></li>
+    <li><a href="#biaya">Biaya</a></li>
+    <li><a href="#hidup">Kehidupan</a></li>
+    <li><a href="#dosen">Dosen &amp; lab</a></li>
+    <li><a href="#email">Email ke dosen</a></li>
+    <li><a href="#istilah">Istilah</a></li>
+    <li><a href="#tanya">Belum jelas</a></li>
+    <li><a href="#sumber">Sumber</a></li>
+  </ul>
+</nav>
+
+<main>
+<section id="ringkasan">
+  <div class="wrap">
+    <div class="sec-head"><h2>Ringkasan: 6 hal terpenting</h2></div>
+    <div class="keys">
+      <div class="key"><strong>1. Ada jalur khusus mahasiswa asing</strong><p>Jalur "生物学学位プログラム(外国人留学生)" hanya ujian lisan: presentasi 15 menit (bahasa Inggris atau Jepang) + tanya jawab 15 menit. Tidak ada ujian tulis dan tidak perlu skor TOEIC/TOEFL.</p><span class="tag t-ok">PASTI (2026)</span></div>
+      <div class="key"><strong>2. Bisa ujian online dari Indonesia</strong><p>Pelamar yang tinggal di luar Jepang boleh ujian lewat Zoom. Formulir khusus harus dikirim selama masa pendaftaran.</p><span class="tag t-ok">PASTI (2026)</span></div>
+      <div class="key"><strong>3. Wajib menghubungi dosen dulu</strong><p>Semua pelamar harus mendapat persetujuan awal (内諾) dari calon dosen pembimbing. Mahasiswa asing juga perlu "nomor referensi" dari dosen untuk formulir online.</p><span class="tag t-ok">PASTI</span></div>
+      <div class="key"><strong>4. Bahasa Jepang tidak disyaratkan</strong><p>Panduan pendaftaran tidak meminta sertifikat bahasa Jepang. Kuliah mana yang diajarkan dalam bahasa Inggris belum dijelaskan.</p><span class="tag t-unk">SEBAGIAN BELUM JELAS</span></div>
+      <div class="key"><strong>5. MEXT: jalur Kedutaan paling realistis</strong><p>MEXT berencana menghapus jalur rekomendasi universitas (umum) mulai 2027. Jalur Kedutaan tidak terkena perubahan ini. Daftar lewat Kedutaan Besar Jepang di Jakarta, biasanya awal April.</p><span class="tag t-est">PERKIRAAN (April 2027)</span></div>
+      <div class="key"><strong>6. Biaya tanpa beasiswa</strong><p>Tahun pertama sekitar ¥920.800 (biaya ujian + biaya masuk + uang kuliah mahasiswa asing), ditambah biaya hidup sekitar ¥80.000/bulan.</p><span class="tag t-ok">PASTI (tarif 2027)</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="jadwal">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Jadwal dari sekarang sampai April 2028</h2>
+      <p>Pilih rute. Tanggal tahun 2027 adalah perkiraan dari jadwal 2026, kecuali diberi tanda lain.</p>
+    </div>
+    <div class="tabs" role="tablist">
+      <button id="tab-a" role="tab" aria-selected="true" aria-controls="route-a">Rute A: Beasiswa MEXT (Kedubes)</button>
+      <button id="tab-b" role="tab" aria-selected="false" aria-controls="route-b">Rute B: Biaya sendiri / beasiswa lain</button>
+    </div>
+    <div id="route-a" role="tabpanel" aria-labelledby="tab-a">
+      <ol class="tl">
+        <li><span class="when">OKT–DES 2026</span><span class="what">Cek syarat dan ambil tes bahasa Inggris</span><span class="det">Syarat MEXT 2027: umur maks. 34 tahun, IPK ≥ 3,2, dan salah satu: TOEFL iBT ≥ 72, IELTS ≥ 5,5, TOEIC L&amp;R ≥ 785, atau JLPT N2. Untuk 2028 kemungkinan lahir pada/setelah 2 April 1993. Mulai pilih dosen di <a href="#dosen">daftar dosen</a> dan tulis rencana riset (maks. 2 halaman).</span></li>
+        <li><span class="when">JAN–MAR 2027</span><span class="what">Siapkan dokumen</span><span class="det">Transkrip dan ijazah berbahasa Inggris yang dilegalisir kampus, surat rekomendasi, abstrak skripsi. Pantau halaman beasiswa Kedubes.</span></li>
+        <li class="big"><span class="when">± 1–22 APR 2027 <span class="tag t-est">PERKIRAAN</span></span><span class="what">Daftar beasiswa MEXT di Kedubes Jepang</span><span class="det">Tahun 2026: pendaftaran 1–22 April, dokumen harus tiba di Kedubes Jakarta paling lambat 22 April 23.59 WIB. Panduan ujian masuk Tsukuba yang baru biasanya terbit akhir April.</span></li>
+        <li><span class="when">JUN–AGU 2027</span><span class="what">Seleksi Kedubes</span><span class="det">Hasil seleksi dokumen (2026: 8 Juni) → ujian tulis bahasa Inggris dan Jepang (Juni/Juli, di Jakarta, Surabaya, Medan, Denpasar, Makassar) → wawancara di Jakarta (Juli/Agustus).</span></li>
+        <li class="big"><span class="when">± 9–22 JUL 2027 <span class="tag t-est">PERKIRAAN</span></span><span class="what">Daftar ujian masuk Tsukuba (gelombang Agustus)</span><span class="det">Daftar online, bayar ¥30.000, kirim dokumen asli lewat pos tercatat (harus tiba ± 23 Juli). Kirim juga formulir ujian online. Minta nomor referensi dari dosen jauh hari sebelumnya.</span></li>
+        <li class="big"><span class="when">± 19–21 AGU 2027 <span class="tag t-est">PERKIRAAN</span></span><span class="what">Ujian masuk (online dari Indonesia)</span><span class="det">Jalur mahasiswa asing: presentasi riset 15 menit + tanya jawab 15 menit.</span></li>
+        <li class="big"><span class="when">± 25 AGU – 1 SEP 2027 <span class="tag t-est">PERKIRAAN</span></span><span class="what">Minta LoA (受入内諾書) ke Tsukuba</span><span class="det">Hanya setelah lulus seleksi pertama Kedubes. Tahun 2026: unggah dokumen paling lambat 25 Agustus, email ke dosen paling lambat 1 September. Permintaan setelah itu dianggap tidak sah.</span></li>
+        <li><span class="when">± 10 SEP 2027</span><span class="what">Pengumuman hasil ujian masuk</span><span class="det">Kalau lulus, kamu bisa langsung masuk S2 tanpa menjadi research student dulu.</span></li>
+        <li><span class="when">NOV 2027 – MAR 2028</span><span class="what">Seleksi kedua oleh MEXT di Jepang</span><span class="det">Hasil akhir paling lambat Maret. Kalau gagal ujian Agustus, masih ada gelombang Januari (daftar ± 30 Nov–10 Des 2027, ujian ± akhir Jan 2028).</span></li>
+        <li class="big"><span class="when">1–7 APR 2028</span><span class="what">Berangkat ke Jepang dan mulai kuliah</span><span class="det">MEXT menentukan tanggal kedatangan. Ada juga opsi berangkat September/Oktober 2028.</span></li>
+      </ol>
+    </div>
+    <div id="route-b" role="tabpanel" aria-labelledby="tab-b" hidden>
+      <ol class="tl">
+        <li><span class="when">OKT 2026 – MAR 2027</span><span class="what">Pilih dosen dan siapkan dana</span><span class="det">Hubungi calon dosen (lihat <a href="#email">contoh email</a>). Siapkan dana tahun pertama sekitar ¥920.800 + biaya hidup.</span></li>
+        <li><span class="when">AKHIR APR 2027 <span class="tag t-est">PERKIRAAN</span></span><span class="what">Panduan ujian masuk terbit</span><span class="det">Cek apakah aturan jalur mahasiswa asing masih sama.</span></li>
+        <li class="big"><span class="when">± 9–22 JUL 2027 <span class="tag t-est">PERKIRAAN</span></span><span class="what">Daftar ujian gelombang Agustus</span><span class="det">Daftar online + kirim dokumen asli + formulir ujian online.</span></li>
+        <li class="big"><span class="when">± 19–21 AGU 2027</span><span class="what">Ujian masuk online</span><span class="det">Hasil ± 10 September 2027.</span></li>
+        <li><span class="when">NOV 2027 – FEB 2028</span><span class="what">Cadangan: gelombang Januari</span><span class="det">Daftar ± 30 Nov–10 Des, ujian ± akhir Januari, hasil ± pertengahan Februari. Kuotanya kecil (2026: 5 orang); masuk April atau Oktober.</span></li>
+        <li><span class="when">FEB–MAR 2028</span><span class="what">Daftar ulang dan urus visa</span><span class="det">Bayar biaya masuk ¥282.000 (bisa minta penundaan) dan urus Certificate of Eligibility.</span></li>
+        <li class="big"><span class="when">APR 2028</span><span class="what">Mulai kuliah, ajukan pembebasan uang kuliah</span><span class="det">Mahasiswa baru mengajukan 授業料免除 (bebas penuh/setengah) pada bulan April.</span></li>
+        <li><span class="when">JUN–JUL 2028</span><span class="what">Beasiswa lewat rekomendasi kampus</span><span class="det">Beasiswa Tsukuba dan yayasan swasta hanya bisa dilamar setelah resmi menjadi mahasiswa.</span></li>
+      </ol>
+      <div class="callout warn"><strong class="h">Hati-hati dengan jalur research student mandiri</strong><p>Kalau kamu masuk Tsukuba sebagai research student (研究生) dengan biaya sendiri, kamu tidak bisa lagi melamar MEXT jalur Kedubes untuk tahun berikutnya. Jadi Rute A dan "research student mandiri" praktis harus dipilih salah satu.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="ujian">
+  <div class="wrap">
+    <div class="sec-head"><h2>Ujian masuk S2</h2><p>Ada dua gelombang per tahun. Data di bawah dari panduan tahun 2026 (untuk masuk April 2027).</p></div>
+    <div class="tbl"><table>
+      <thead><tr><th></th><th>Gelombang Agustus</th><th>Gelombang Januari</th></tr></thead>
+      <tbody>
+        <tr><td>Pendaftaran online</td><td class="num">9–22 Jul 2026</td><td class="num">30 Nov–10 Des 2026</td></tr>
+        <tr><td>Dokumen asli tiba</td><td class="num">23 Jul 2026</td><td class="num">11 Des 2026</td></tr>
+        <tr><td>Ujian (mahasiswa asing)</td><td class="num">20 Agu 2026</td><td class="num">27 Jan 2027</td></tr>
+        <tr><td>Pengumuman</td><td class="num">10 Sep 2026</td><td class="num">15 Feb 2027</td></tr>
+        <tr><td>Kuota</td><td>46 (termasuk mahasiswa asing)</td><td>5</td></tr>
+        <tr><td>Mulai kuliah</td><td>April</td><td>April atau Oktober</td></tr>
+      </tbody>
+    </table></div>
+    <div class="two">
+      <div class="panel hl"><h3>Jalur mahasiswa asing (外国人留学生)</h3>
+        <ul class="plain">
+          <li>Hanya ujian lisan (nilai 100).</li>
+          <li>Presentasi 15 menit tentang skripsi/riset sebelumnya dan rencana riset S2, dalam bahasa Inggris atau Jepang. Lalu tanya jawab 15 menit.</li>
+          <li>Tidak perlu skor TOEIC/TOEFL. Kalau memilih wawancara bahasa Jepang, harus menyerahkan skor TOEIC/TOEFL.</li>
+          <li>Untuk ujian di kampus: tidak boleh membawa laptop atau bahan cetak; proyektor tersedia.</li>
+        </ul>
+        <span class="tag t-unk">BELUM JELAS: definisi resmi "mahasiswa asing" untuk jalur ini</span>
+      </div>
+      <div class="panel"><h3>Jalur umum (一般)</h3>
+        <ul class="plain">
+          <li>Bahasa Inggris (100): skor TOEIC L&amp;R atau TOEFL iBT. Nilai penuh pada TOEIC 879 / iBT 100. IELTS tidak diterima untuk program ini.</li>
+          <li>Ujian tulis (100): pilih 4 dari 8 topik, jelaskan 4 istilah per topik. Soal 2025 tersedia dalam bahasa Jepang dan Inggris.</li>
+          <li>Ujian lisan (100).</li>
+        </ul>
+      </div>
+    </div>
+    <h3>Syarat dan dokumen</h3>
+    <ul class="plain">
+      <li><b>Pendidikan 16 tahun</b>: SD–SMA (12 tahun) + S1 (4 tahun) memenuhi syarat tanpa seleksi tambahan. Lulusan D3/D4 atau pendidikan yang lebih pendek harus mengajukan "seleksi kelayakan" (出願資格審査) lebih awal (2026: batas 3 Juli / 24 November). <span class="tag t-ok">PASTI</span></li>
+      <li><b>Dokumen</b>: ijazah dan transkrip asli berbahasa Inggris atau Jepang, dengan cap resmi kampus. Dikirim lewat pos tercatat dan harus <i>tiba</i> sebelum batas waktu. Beri waktu 1–2 minggu untuk pengiriman dari Indonesia.</li>
+      <li><b>Nomor referensi</b> (リファレンス番号): untuk pemeriksaan kontrol ekspor keamanan. Diberikan oleh calon dosen dan bisa butuh waktu lama.</li>
+      <li><b>Ujian online</b>: kirim "Application form to take exam online" dan "Written Agreement" ke seimeiin-nyushi@un.tsukuba.ac.jp selama masa pendaftaran. Perlu ruangan tenang, PC dengan kamera dan mikrofon (tanpa earphone), dan HP cadangan.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="mext">
+  <div class="wrap">
+    <div class="sec-head"><h2>Beasiswa Pemerintah Jepang (MEXT)</h2><p>Beasiswa penuh: uang kuliah gratis, tunjangan bulanan, dan tiket pesawat. Ada tiga jalur, tetapi untuk Biologi hanya satu yang realistis.</p></div>
+    <div class="tbl"><table>
+      <thead><tr><th>Jalur</th><th>Status untuk kamu</th></tr></thead>
+      <tbody>
+        <tr><td><b>Rekomendasi Kedubes</b><br>大使館推薦</td><td><span class="tag t-ok">TERBUKA</span> Jalur utama. Didaftar di Kedubes Jepang di Jakarta, sekitar April.</td></tr>
+        <tr><td><b>Rekomendasi universitas (umum)</b><br>大学推薦・一般枠</td><td><span class="tag t-warn">DIPERKIRAKAN DIHAPUS</span> Dokumen MEXT (15 Sep 2026): jalur ini "pada dasarnya akan dihapus" mulai 2027. Keputusan resmi menunggu anggaran negara akhir 2026, tetapi MEXT meminta universitas menganggapnya tidak dibuka. Sebelumnya pun hanya 3 orang per tahun untuk seluruh Tsukuba.</td></tr>
+        <tr><td><b>Rekomendasi universitas (khusus)</b><br>大学推薦・特別枠</td><td><span class="tag t-unk">TIDAK UNTUK BIOLOGI</span> Tetap ada, tetapi hanya untuk program tertentu. Daftar 2026 tidak memuat Program Biologi.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout info">
+      <strong class="h">Apa artinya perubahan kebijakan MEXT?</strong>
+      <ul class="plain">
+        <li>Yang dihapus hanya jalur rekomendasi universitas (umum). Jalur Kedubes <b>tidak</b> termasuk. <span class="tag t-ok">PASTI (rencana MEXT saat ini)</span></li>
+        <li>Kuota jalur Kedubes <b>tidak</b> akan ditambah. Dana yang dihemat dipakai untuk "kuota sangat unggul" baru (± ¥242.000/bulan, ± 100 orang/tahun), yang pada dasarnya hanya untuk S3. <span class="tag t-est">RENCANA</span></li>
+        <li>MEXT mempertimbangkan seleksi tambahan untuk bidang yang belum punya program khusus. Kalau program ilmu hayati di Tsukuba terpilih, bisa muncul jalur baru. <span class="tag t-unk">BELUM JELAS</span></li>
+      </ul>
+    </div>
+    <h3>Jalur Kedubes: yang perlu diketahui (data program 2027)</h3>
+    <div class="two">
+      <div class="panel"><h4 style="margin:0;font-family:var(--f-display)">Syarat</h4>
+        <ul class="plain">
+          <li>Umur maks. 34 tahun pada 1 April 2027 (lahir pada/setelah 2 April 1992). Syarat umur mutlak.</li>
+          <li>Lulusan D4/S1/S2; bidang studi serumpun dengan jenjang sebelumnya.</li>
+          <li>IPK minimal 3,2.</li>
+          <li>Salah satu: TOEFL iBT 72, IELTS 5,5, TOEIC L&amp;R 785, TOEIC S&amp;W 310, JLPT N2. Sertifikat terbit pada/setelah Juli 2024. TOEFL-like, prediction test, dan Duolingo tidak diterima.</li>
+        </ul>
+      </div>
+      <div class="panel"><h4 style="margin:0;font-family:var(--f-display)">Fasilitas</h4>
+        <ul class="plain">
+          <li>Uang kuliah, biaya ujian, dan biaya masuk ditanggung.</li>
+          <li>Tunjangan ± ¥143.000/bulan (research student), ¥144.000 (S2), ¥145.000 (S3).</li>
+          <li>Tiket pesawat pulang-pergi Indonesia–Jepang.</li>
+          <li>Tanpa ikatan dinas.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout info">
+      <strong class="h">Research student atau langsung S2?</strong>
+      <p>Penerima MEXT biasanya datang sebagai research student (非正規生, tanpa gelar) selama ± 1–2 tahun, lalu ikut ujian masuk S2. Kalau sudah lulus ujian masuk Tsukuba atau dosen memberi LoA untuk program reguler, kamu bisa langsung masuk S2. Karena ujian online Agustus selesai sebelum batas LoA, Rute A di atas memakai kesempatan ini.</p>
+    </div>
+    <div class="callout warn">
+      <strong class="h">Aturan penting yang sering terlewat</strong>
+      <ul class="plain">
+        <li>LoA dari Tsukuba hanya bisa diminta <b>setelah lulus seleksi pertama Kedubes</b>, lewat formulir resmi universitas. Tanpa persetujuan dosen, LoA tidak diterbitkan.</li>
+        <li>Panduan LoA Tsukuba meminta pelamar <b>tidak menghubungi dosen sebelum mengunggah dokumen</b>. Padahal ujian masuk mewajibkan kontak dengan dosen. Tanyakan ke kantor program cara menggabungkan keduanya. <span class="tag t-unk">BELUM JELAS</span></li>
+        <li>MEXT: hubungi maksimal 2 universitas sekaligus. Jika satu dosen menolak, jangan minta LoA ke dosen lain di universitas yang sama.</li>
+        <li>Orang yang sudah kuliah di Jepang dengan visa pelajar, atau berencana masuk sebagai mahasiswa biaya sendiri sebelum beasiswa dimulai, tidak boleh melamar.</li>
+      </ul>
+    </div>
+    <h3>Beasiswa lain</h3>
+    <ul class="plain">
+      <li><b>Beasiswa lewat rekomendasi Tsukuba</b> (Tsukuba Scholarship dan yayasan swasta): hanya untuk mahasiswa yang sudah terdaftar. Dibuka sekali setahun, Juni–Juli. <span class="tag t-ok">PASTI</span></li>
+      <li><b>Pembebasan uang kuliah</b> (penuh/setengah, berdasarkan kondisi ekonomi dan prestasi): diajukan bulan April setelah masuk. Tidak berlaku untuk research student. <span class="tag t-ok">PASTI</span></li>
+      <li><b>Yayasan yang dilamar langsung</b> (misalnya Honjo, INOAC, Teijin Kumura): cek masing-masing apakah bisa dilamar sebelum datang ke Jepang. <span class="tag t-unk">BELUM JELAS</span></li>
+      <li><b>LPDP</b>: daftar universitas tujuan tahun 2025 memuat "University of Tsukuba – All Subject". Daftar 2026 belum dicek. Untuk masuk April 2028, kemungkinan daftar di periode seleksi tahun 2027 (2026: 30 Juni–31 Juli). <span class="tag t-ok">PASTI (daftar 2025)</span></li>
+      <li><b>JASSO pra-kedatangan</b> (¥48.000/bulan): diajukan oleh universitas, bukan oleh pelamar. Program Biologi tidak termasuk program penerima pada tahun 2026. <span class="tag t-ok">PASTI</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="program">
+  <div class="wrap">
+    <div class="sec-head"><h2>Tentang program</h2><p>Program Magister Biologi, Graduate School of Science and Technology, Degree Programs in Life and Earth Sciences. Gelar: Master of Science (修士（理学）).</p></div>
+    <div class="two">
+      <div class="panel"><h3>Kurikulum</h3>
+        <ul class="plain">
+          <li>Minimal 2 tahun, 30 SKS, dan lulus sidang tesis. Bisa lulus 1 tahun jika risetnya sangat baik.</li>
+          <li>Wajib: Advanced Biology Seminar (1 SKS) dan Science Presentation (2 SKS).</li>
+          <li>20 SKS seminar dan metode riset di bidang sendiri.</li>
+          <li>Ada program sertifikat Komunikasi Sains (6 SKS) sebagai tambahan.</li>
+        </ul>
+        <p>Bahasa kuliah: di katalog mata kuliah (KdB 2026), hanya 2 mata kuliah Biologi yang bisa diajarkan dalam bahasa Inggris "jika diminta" (termasuk Advanced Biology Seminar). Seminar lab (20 SKS) tergantung dosen pembimbing.</p>
+        <span class="tag t-est">BAHASA INGGRIS TERBATAS</span>
+      </div>
+      <div class="panel"><h3>Gelar ganda dengan National Taiwan University</h3>
+        <ul class="plain">
+          <li>Diajarkan dalam bahasa Inggris. Dapat dua gelar: Tsukuba dan NTU.</li>
+          <li>Setahun di NTU mulai September tahun pertama.</li>
+          <li>Seleksi setelah masuk (skor bahasa Inggris + wawancara). Kuota beberapa orang saja.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel"><h3>Ke mana lulusannya?</h3>
+      <p>Sebagian besar bekerja di perusahaan (farmasi, makanan, IT; contoh: Otsuka, Kao, Ajinomoto, Canon, Fujitsu). Sebagian menjadi guru atau pegawai pemerintah, dan 6–9 orang per tahun lanjut S3 di Tsukuba. Ada lulusan S3 tahun 2024 yang bekerja di Universitas Brawijaya.</p>
+    </div>
+    <p class="src">Delapan bidang riset: Sistematika &amp; Evolusi, Ekologi, Perkembangan &amp; Fisiologi Tumbuhan, Perkembangan &amp; Fisiologi Hewan, Biologi Sel Molekuler, Informatika Genom, Biologi Sel Lanjut, Biologi Molekuler Lanjut. Dua bidang terakhir diajar dosen mitra dari lembaga riset seperti RIKEN, AIST, dan NIES.</p>
+  </div>
+</section>
+
+<section id="biaya">
+  <div class="wrap">
+    <div class="sec-head"><h2>Biaya (tanpa beasiswa)</h2><p>Tarif mahasiswa asing berlaku untuk yang masuk mulai April 2027. Tarif bisa berubah sebelum 2028.</p></div>
+    <div class="tbl"><table>
+      <thead><tr><th>Pos</th><th>Jumlah</th><th>Catatan</th></tr></thead>
+      <tbody>
+        <tr><td>Biaya ujian</td><td class="num">¥30.000</td><td>Tidak dikembalikan. Gratis untuk penerima MEXT.</td></tr>
+        <tr><td>Biaya masuk</td><td class="num">¥282.000</td><td>Sekali bayar. Bisa minta penundaan atau pembebasan.</td></tr>
+        <tr><td>Uang kuliah mahasiswa asing</td><td class="num">¥608.800/tahun</td><td>¥304.400 per semester. Mahasiswa non-asing: ¥535.800.</td></tr>
+        <tr><td>Biaya hidup</td><td class="num">± ¥80.000/bulan</td><td>Angka resmi universitas, belum termasuk asrama.</td></tr>
+        <tr><td>Kamar di luar kampus</td><td class="num">¥30.000–50.000/bulan</td><td>Ditambah deposit dan biaya agen 1–2 bulan sewa.</td></tr>
+      </tbody>
+    </table></div>
+    <p class="src">Total tahun pertama: ± ¥920.800 (ujian + biaya masuk + uang kuliah), ditambah biaya hidup ± ¥960.000.</p>
+    <h3>Asrama kampus (tarif 2024)</h3>
+    <div class="tbl"><table>
+      <thead><tr><th>Tipe kamar</th><th>Per bulan</th></tr></thead>
+      <tbody>
+        <tr><td>Kamar single biasa (± 10 m², belum direnovasi)</td><td class="num">¥15.380</td></tr>
+        <tr><td>Kamar single biasa (sudah direnovasi)</td><td class="num">¥19.410</td></tr>
+        <tr><td>Kamar ganda dipakai sendiri (Ichinoya 10–16)</td><td class="num">¥23.670</td></tr>
+        <tr><td>Ichinoya gedung 36–37</td><td class="num">¥29.785</td></tr>
+        <tr><td>Global Village (rumah berbagi)</td><td class="num">¥35.800</td></tr>
+      </tbody>
+    </table></div>
+    <p class="src">Deposit ¥30.000 saat masuk; listrik dan air dibayar sendiri. Tidak ada jaminan dapat kamar atau prioritas khusus untuk mahasiswa S2 asing. Tarif 2028 mungkin berbeda. <span class="tag t-est">PERKIRAAN</span></p>
+  </div>
+</section>
+
+<section id="hidup">
+  <div class="wrap">
+    <div class="sec-head"><h2>Kehidupan sehari-hari</h2></div>
+    <div class="two">
+      <div class="panel"><h3>Ibadah</h3>
+        <p>Kampus menyediakan 3 "Quiet Space" yang boleh dipakai untuk salat: Gedung 1D lantai 3, Gedung 3B lantai 1 (ruang 3B113, ada air untuk wudu), dan GV Community Station lantai 1. Buka pada hari kuliah, kira-kira 07.30–19.00.</p>
+        <span class="tag t-ok">PASTI (Mei 2025)</span>
+      </div>
+      <div class="panel"><h3>Makanan halal</h3>
+        <p>Supermarket kampus (Kasumi) pernah menjual daging bersertifikat halal (info 2020). Ada restoran halal "Cafe Marhaban" di gedung 2B lantai 1.</p>
+        <span class="tag t-est">CEK ULANG SAAT TIBA</span>
+      </div>
+      <div class="panel"><h3>Komunitas Indonesia</h3>
+        <p>PPI Ibaraki (Perhimpunan Pelajar Indonesia cabang Ibaraki) berbasis di Tsukuba dan sering mengadakan acara di Global Village. Cari "PPI Ibaraki" di Instagram atau Facebook untuk bertanya langsung kepada mahasiswa Indonesia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="dosen">
+  <div class="wide">
+    <div class="sec-head wrap" style="margin-inline:0;max-width:46rem">
+      <h2>Dosen &amp; laboratorium</h2>
+      <p>73 dosen dari daftar resmi program. Ringkasan riset ditulis ulang dalam bahasa Indonesia yang sederhana. Label "rekrut mahasiswa" berarti situs lab menyebut sedang mencari mahasiswa; tidak ada lab yang secara khusus menyebut mahasiswa asing.</p>
+    </div>
+    <div class="filters">
+      <input id="q" class="search" type="search" placeholder="Cari nama, topik, atau kata kunci (mis. algae, ecology, genome)" aria-label="Cari dosen">
+      <div class="chips" id="fieldChips" aria-label="Filter bidang"></div>
+      <div class="chips" id="flagChips" aria-label="Filter tambahan"></div>
+      <span class="count" id="count"></span>
+    </div>
+    <div class="grid" id="cards"></div>
+    <p class="src">Dosen mitra (連携) bekerja di lembaga riset di luar kampus; riset biasanya dilakukan di lembaga tersebut. Nama Latin beberapa dosen mitra belum diverifikasi.</p>
+  </div>
+</section>
+
+<section id="email">
+  <div class="wrap">
+    <div class="sec-head"><h2>Cara menghubungi calon dosen</h2><p>Langkah pertama yang disarankan universitas sendiri adalah menghubungi dosen. Tips:</p></div>
+    <ol class="plain">
+      <li>Baca 2–3 makalah terbaru dosen tersebut (lihat profil TRIOS atau researchmap).</li>
+      <li>Tulis email singkat dalam bahasa Inggris. Lampirkan CV, transkrip, dan ringkasan rencana riset (1 halaman).</li>
+      <li>Sebutkan dengan jelas: ingin masuk S2 April 2028, jalur mahasiswa asing, dan apakah akan melamar MEXT.</li>
+      <li>Kalau 2 minggu tidak ada balasan, kirim pengingat sopan sekali. Jangan kirim email massal ke banyak dosen sekaligus.</li>
+      <li>Ingat aturan MEXT: jika melamar LoA lewat Kedubes, ikuti prosedur resmi Tsukuba (lihat bagian <a href="#mext">MEXT</a>).</li>
+    </ol>
+    <pre class="mail" id="mailText">Subject: Prospective Master's student (April 2028) – interest in [topic]
+
+Dear Professor [Last name],
+
+My name is [Full name], a [final-year student / graduate] in [major] at [university], Indonesia (GPA [x.xx]/4.00).
+
+I am writing because I would like to apply to the Master's Program in Biology at the University of Tsukuba for April 2028 entry, through the international student selection. I read your recent paper "[title]" and I am very interested in [specific point].
+
+For my undergraduate thesis, I studied [1–2 sentences: question, method, main result]. In my master's study, I hope to [1–2 sentences on a research idea related to the lab].
+
+I also plan to apply for the MEXT scholarship (Embassy Recommendation) in April 2027.
+
+Would you consider accepting me as a prospective student? I have attached my CV, transcript, and a one-page research proposal. I would be grateful for an online meeting at your convenience.
+
+Thank you very much for your time.
+
+Sincerely,
+[Full name]
+[Email] | [Phone/WhatsApp]</pre>
+    <button class="btn" id="copyBtn" type="button">Salin template</button>
+  </div>
+</section>
+
+<section id="istilah">
+  <div class="wrap">
+    <div class="sec-head"><h2>Istilah Jepang yang sering muncul</h2></div>
+    <dl class="gl">
+      <dt>博士前期課程<span>hakushi zenki katei</span></dt><dd>Program magister (S2)</dd>
+      <dt>学位プログラム<span>gakui puroguramu</span></dt><dd>Program gelar (setara program studi)</dd>
+      <dt>募集要項<span>boshū yōkō</span></dt><dd>Panduan pendaftaran resmi</dd>
+      <dt>出願<span>shutsugan</span></dt><dd>Pendaftaran / pengajuan lamaran</dd>
+      <dt>外国人留学生<span>gaikokujin ryūgakusei</span></dt><dd>Mahasiswa asing</dd>
+      <dt>口述試験<span>kōjutsu shiken</span></dt><dd>Ujian lisan / wawancara</dd>
+      <dt>指導教員<span>shidō kyōin</span></dt><dd>Dosen pembimbing</dd>
+      <dt>内諾<span>naidaku</span></dt><dd>Persetujuan awal (dari dosen)</dd>
+      <dt>受入内諾書<span>ukeire naidakusho</span></dt><dd>Letter of Acceptance / LoA</dd>
+      <dt>リファレンス番号<span>refarensu bangō</span></dt><dd>Nomor referensi kontrol ekspor dari dosen</dd>
+      <dt>出願資格審査<span>shutsugan shikaku shinsa</span></dt><dd>Seleksi kelayakan sebelum mendaftar</dd>
+      <dt>研究生<span>kenkyūsei</span></dt><dd>Research student (tanpa gelar)</dd>
+      <dt>国費外国人留学生<span>kokuhi ryūgakusei</span></dt><dd>Penerima beasiswa MEXT</dd>
+      <dt>大使館推薦<span>taishikan suisen</span></dt><dd>Rekomendasi Kedutaan Besar</dd>
+      <dt>大学推薦<span>daigaku suisen</span></dt><dd>Rekomendasi universitas</dd>
+      <dt>入学料 / 授業料<span>nyūgakuryō / jugyōryō</span></dt><dd>Biaya masuk / uang kuliah</dd>
+      <dt>授業料免除<span>jugyōryō menjo</span></dt><dd>Pembebasan uang kuliah</dd>
+      <dt>連携<span>renkei</span></dt><dd>Mitra (dosen dari lembaga riset luar)</dd>
+    </dl>
+  </div>
+</section>
+
+<section id="tanya">
+  <div class="wrap">
+    <div class="sec-head"><h2>Hal yang belum jelas: tanyakan langsung</h2><p>Kirim email dalam bahasa Inggris ke kantor program.</p></div>
+    <ol class="plain">
+      <li>Siapa yang termasuk "mahasiswa asing" untuk jalur ujian lisan? Apakah warga negara Indonesia yang tinggal di Indonesia otomatis masuk?</li>
+      <li>Bagaimana menggabungkan kewajiban kontak dosen untuk ujian dengan aturan LoA MEXT yang melarang kontak sebelum unggah dokumen?</li>
+      <li>Apakah calon dosen bisa membimbing dan mengadakan seminar lab dalam bahasa Inggris? (Tanyakan juga ke dosen.)</li>
+      <li>Apakah dokumen boleh dikirim dengan EMS / pos internasional tercatat?</li>
+      <li>Apakah mahasiswa S2 asing mendapat prioritas asrama?</li>
+      <li>Kapan jadwal resmi ujian 2027 dan program MEXT 2028 terbit? (Perkiraan: April 2027.)</li>
+    </ol>
+    <div class="panel">
+      <p><b>Kantor Program Biologi</b> (生物学学位プログラム事務室)</p>
+      <p>Email: <span class="mono" style="user-select:all">seibutsu-senkou-jimu@un.tsukuba.ac.jp</span></p>
+      <p>Telepon: <span class="mono">+81-29-853-6600</span> (09.00–16.30 waktu Jepang)</p>
+      <p><b>Beasiswa MEXT, Kedubes Jepang di Jakarta</b>: <span class="mono" style="user-select:all">beasiswa@dj.mofa.go.jp</span>, WhatsApp <span class="mono">+62 811-153-744</span> (chat saja). Kedubes tidak menjawab pertanyaan yang sudah dijelaskan di situs dan FAQ.</p>
+    </div>
+  </div>
+</section>
+
+<section id="sumber">
+  <div class="wrap">
+    <div class="sec-head"><h2>Sumber resmi</h2><p>Diakses 9 Oktober 2026.</p></div>
+    <ul class="plain src">
+      <li><a href="https://www.life.tsukuba.ac.jp/biologydp/">Situs Program Biologi (Jepang)</a>; <a href="https://www.life.tsukuba.ac.jp/biologydp/admission/">Info ujian &amp; soal lama</a>; <a href="https://www.life.tsukuba.ac.jp/biologydp/members/">Daftar dosen</a>; <a href="https://www.life.tsukuba.ac.jp/biologydp/curriculum/">Kurikulum</a>; <a href="https://www.life.tsukuba.ac.jp/biologydp/career_pass/">Karier lulusan</a></li>
+      <li><a href="https://eng.ap-graduate.tsukuba.ac.jp/course/les/first_all/">Panduan pendaftaran S2 (Inggris)</a> · <a href="https://www.ap-graduate.tsukuba.ac.jp/course/les/first_all/">versi Jepang</a></li>
+      <li><a href="https://www.tsukuba.ac.jp/en/admissions/financial-scholarships/mext/">Tsukuba: MEXT Scholarship (pengumuman Sep 2026)</a></li>
+      <li><a href="https://ssc.sec.tsukuba.ac.jp/ies-top/support-4-is/st/to-applicants-who-wish-to-request-provisional-acceptance-from-university-of-tsukuba">Tsukuba: prosedur LoA untuk pelamar MEXT Kedubes</a></li>
+      <li><a href="https://www.id.emb-japan.go.jp/itpr_id/sch_rs.html">Kedubes Jepang: Beasiswa MEXT Research Students 2027</a></li>
+      <li><a href="https://www.mext.go.jp/content/20260915-mxt-kotokoku01-000051568_01.pdf">MEXT: dokumen penjelasan perubahan kebijakan (15 Sep 2026, hlm. 26–30)</a></li>
+      <li><a href="https://lpdp.kemenkeu.go.id/storage/beasiswa/afirmasi/page/file/affirmation_page_file_1751356081.pdf">LPDP: daftar universitas tujuan 2025</a> · <a href="https://lpdp.kemenkeu.go.id/beasiswa/kebijakan-umum/">kebijakan umum LPDP</a></li>
+      <li><a href="https://www.jasso.go.jp/ryugaku/scholarship_j/shoreihi/yoyaku_tonichimae.html">JASSO: beasiswa pra-kedatangan</a> · <a href="https://kdb.tsukuba.ac.jp/">KdB (katalog mata kuliah)</a> · <a href="https://ssc.sec.tsukuba.ac.jp/archives/52216">Quiet Space (ruang salat)</a> · <a href="https://www.tsukuba.ac.jp/en/admissions/guidebook-international-student/">International Students' Guidebook</a></li>
+      <li><a href="https://www.mext.go.jp/a_menu/koutou/ryugaku/06032818.htm">MEXT: informasi beasiswa pemerintah Jepang</a> · <a href="https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/">Study in Japan</a></li>
+      <li><a href="https://www.tsukuba.ac.jp/en/admissions/fees-tuition/">Tsukuba: biaya</a> · <a href="https://www.tsukuba.ac.jp/en/admissions/financial-exemption/">pembebasan biaya</a> · <a href="https://www.tsukuba.ac.jp/en/admissions/fees-living-expenses/">biaya hidup</a> · <a href="https://www.tsukuba.ac.jp/en/admissions/financial-scholarships/">beasiswa lain</a></li>
+      <li><a href="https://www.tsukuba.ac.jp/en/academics/international-research-students/">Tsukuba: research student</a> · <a href="https://trios.tsukuba.ac.jp/en">TRIOS (database peneliti)</a></li>
+    </ul>
+    <p class="src">Situs program berbahasa Inggris (mbs.life.tsukuba.ac.jp/e/) sudah lama tidak diperbarui. Gunakan panduan pendaftaran resmi di atas.</p>
+  </div>
+</section>
+</main>
+
+<footer class="wrap">
+  <p>Panduan ini dibuat oleh teman, bukan oleh Universitas Tsukuba. Jika ada perbedaan, yang berlaku adalah dokumen resmi.</p>
+</footer>
+
+<script>
+const FAC = [{"n": "Ken-ichiro Ishida", "j": "石田 健一郎", "r": "Profesor", "f": "Sistematika & Evolusi", "fj": "系統分類・進化", "aff": null, "s": "Meneliti asal-usul dan evolusi berbagai organisme eukariot berfotosintesis (seperti alga), serta mengembangkan alga baru sebagai sumber biomassa.", "sj": "多様な光合成真核生物の起源と進化の解明、新規藻類バイオマス資源の開発", "k": ["algae", "protists", "taxonomy", "endosymbiosis", "molecular phylogeny", "organelle evolution"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000001146", "lab": "http://www.biol.tsukuba.ac.jp/~ken/", "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Masanao Honda", "j": "本多 正尚", "r": "Profesor", "f": "Sistematika & Evolusi", "fj": "系統分類・進化", "aff": null, "s": "Mengklasifikasikan reptil (kadal, ular, dll.) berdasarkan ciri-ciri bentuk tubuhnya.", "sj": "形態データに基づく爬虫類の分類学", "k": ["animal systematics", "conservation genetics", "reptile taxonomy", "morphology"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000001167", "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Hiroshi Wada", "j": "和田 洋", "r": "Profesor", "f": "Sistematika & Evolusi", "fj": "系統分類・進化", "aff": null, "s": "Membandingkan gen-gen yang mengatur perkembangan embrio pada hewan laut seperti bintang laut dan moluska untuk memahami evolusi bentuk tubuh.", "sj": "棘皮動物・軟体動物などの比較分子発生学", "k": ["evolutionary developmental biology", "evolutionary biology", "echinoderms", "molluscs"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000001156", "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Yosuke Degawa", "j": "出川 洋介", "r": "Profesor Madya", "f": "Sistematika & Evolusi", "fj": "系統分類・進化", "aff": null, "s": "Meneliti klasifikasi, hubungan kekerabatan, dan sejarah alam berbagai jenis jamur.", "sj": "菌類の系統分類・自然史に関する研究", "k": ["mycology", "fungi", "Zygomycota", "Chytridiomycota", "biodiversity inventory", "natural history"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000001164", "lab": null, "en": false, "rec": false, "loc": "Lokasi lab: Sugadaira Research Station (Nagano), bukan kampus utama Tsukuba.", "warn": null, "mitra": false}, {"n": "Hiroaki Nakano", "j": "中野 裕昭", "r": "Profesor Madya", "f": "Sistematika & Evolusi", "fj": "系統分類・進化", "aff": null, "s": "Meneliti keanekaragaman dan evolusi hewan laut yang sangat sederhana dan jarang diteliti (seperti Placozoa dan Xenoturbella).", "sj": "平板動物・珍渦虫など非モデル海産動物を用いた進化多様性の研究", "k": ["evolutionary developmental biology", "metazoan diversity", "Placozoa", "Xenoturbella", "larvae", "deuterostomes"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000001173", "lab": "https://sites.google.com/site/hiroakinakanolab/home", "en": false, "rec": true, "loc": "Lokasi lab: Shimoda Marine Research Center (Shizuoka), bukan kampus utama Tsukuba.", "warn": null, "mitra": false}, {"n": "Takeshi Nakayama", "j": "中山 剛", "r": "Profesor Madya", "f": "Sistematika & Evolusi", "fj": "系統分類・進化", "aff": null, "s": "Mengklasifikasikan mikroorganisme bersel satu (protista) berdasarkan bentuk sel dan data DNA. (Situs lab bersama dengan Lab Ishida; halaman profil lama: http://www.sbs.life.tsukuba.ac.jp/Nakayama/Nakayama.html)", "sj": "形態・分子形質を用いたプロチスタの系統分類", "k": ["protists", "ultrastructure", "molecular phylogeny", "taxonomy"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000001161", "lab": "http://www.biol.tsukuba.ac.jp/~ken/", "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Kensuke Yahata", "j": "八畑 謙介", "r": "Lektor", "f": "Sistematika & Evolusi", "fj": "系統分類・進化", "aff": null, "s": "Membandingkan bentuk tubuh kaki seribu dan lipan (Myriapoda) untuk memahami evolusi artropoda.", "sj": "節足動物多足類の比較形態学", "k": ["morphology", "taxonomy", "phylogeny", "evolution", "arthropods", "Myriapoda"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000001154", "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Yoshiaki Morino", "j": "守野 孔明", "r": "Asisten Profesor", "f": "Sistematika & Evolusi", "fj": "系統分類・進化", "aff": null, "s": "Meneliti bagaimana embrio hewan laut tak bertulang belakang (seperti moluska) berkembang dan bagaimana proses itu berevolusi.", "sj": "らせん卵割動物を中心にした海産無脊椎動物の進化発生学", "k": ["evo-devo", "spiralian development", "homeobox genes", "cell fate specification", "mollusc shell formation"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000003876", "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Takashi Shiratori", "j": "白鳥 峻志", "r": "Asisten Profesor", "f": "Sistematika & Evolusi", "fj": "系統分類・進化", "aff": null, "s": "Menemukan dan mengklasifikasikan mikroba yang belum dikenal (protista dan bakteri) untuk memahami 'pohon kehidupan'.", "sj": "真核微生物及び原核生物の系統分類・進化", "k": ["protists", "virus-eating protists", "predatory bacteria", "microbial diversity", "evolution", "taxonomy"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000004374", "lab": "https://tshiratoriprotist.wixsite.com/my-site/home", "en": false, "rec": true, "loc": null, "warn": null, "mitra": false}, {"n": "Masaki Takenaka", "j": "竹中 將起", "r": "Asisten Profesor", "f": "Sistematika & Evolusi", "fj": "系統分類・進化", "aff": null, "s": "Meneliti evolusi serangga (terutama serangga air seperti lalat sehari/mayfly), termasuk asal-usul sayap serangga.", "sj": "昆虫類を用いた系統進化学や進化発生学", "k": ["developmental genetics", "environmental DNA", "speciation", "aquatic insects", "origin of insect wings", "phylogeography"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000004517", "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Mitsuru Hirota", "j": "廣田 充", "r": "Profesor", "f": "Ekologi", "fj": "生態学", "aff": null, "s": "Meneliti siklus karbon di ekosistem darat dan bagaimana tumbuhan beradaptasi dengan lingkungannya.", "sj": "陸域生態系における炭素循環および植物の環境適応に関する研究", "k": ["terrestrial ecosystem ecology", "carbon cycle", "plant ecology", "environmental adaptation", "biodiversity"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000001397", "lab": "https://www.u.tsukuba.ac.jp/~hirota.mitsuru.fw/", "en": false, "rec": true, "loc": null, "warn": null, "mitra": false}, {"n": "Yoshiaki Tsuda", "j": "津田 吉晃", "r": "Profesor Madya", "f": "Ekologi", "fj": "生態学", "aff": null, "s": "Menggunakan data genetik/genom untuk mempelajari populasi berbagai makhluk hidup (pohon, ikan, serangga, mamalia) dan pelestariannya.", "sj": "樹木、魚類、昆虫、哺乳類など様々な生物種の集団遺伝学・ゲノミクス", "k": ["population genetics", "molecular ecology", "conservation biology", "forest science", "mountain science"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000003812", "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Yukihiko Toquenaga", "j": "徳永 幸彦", "r": "Profesor Madya", "f": "Ekologi", "fj": "生態学", "aff": null, "s": "Meneliti ekologi populasi hewan melalui eksperimen, pengamatan di alam, dan simulasi komputer (kehidupan buatan).", "sj": "実験・野外個体群及び人工生命を用いた生態学的研究", "k": ["ecology", "population ecology", "artificial life", "experimental populations"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000001205", "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Yukie Sato", "j": "佐藤 幸恵", "r": "Profesor Madya", "f": "Ekologi", "fj": "生態学", "aff": null, "s": "Meneliti evolusi perilaku dan pembentukan spesies baru, terutama pada tungau dan serangga di lahan pertanian.", "sj": "行動・生態の進化や種分化に関する研究", "k": ["behavioral ecology", "evolutionary ecology", "insects and mites", "agroecosystems", "speciation"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000003604", "lab": "https://www.u.tsukuba.ac.jp/~sato.yukie.gn/", "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Tomoyuki Yokoi", "j": "横井 智之", "r": "Profesor Madya", "f": "Ekologi", "fj": "生態学", "aff": null, "s": "Meneliti ekologi dan perilaku serangga (terutama lebah penyerbuk) serta upaya pelestariannya.", "sj": "昆虫類の基礎生態・行動生態の解明および保全、応用利用", "k": ["conservation ecology", "satoyama", "pollinators", "bees", "invasive species", "insect behavior"], "pu": "https://trios.tsukuba.ac.jp/ja/researcher/0000003326", "lab": "https://sites.google.com/site/tomoyokolab/home", "en": false, "rec": true, "loc": null, "warn": null, "mitra": false}, {"n": "Kazuharu Ohashi", "j": "大橋 一晴", "r": "Lektor", "f": "Ekologi", "fj": "生態学", "aff": null, "s": "Meneliti bagaimana interaksi bunga dengan hewan penyerbuk (lebah, burung, dll.) membentuk evolusi ciri-ciri bunga.", "sj": "訪花動物との相互作用を介した花の形質進化", "k": ["plant-animal interactions", "pollination ecology", "foraging behavior", "floral evolution", "pollen dispersal"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000001204", "lab": "https://www.ohashilab.com", "en": true, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Benjamin Paul Harvey", "j": "ハーベイ ベンジャミン ポール", "r": "Asisten Profesor", "f": "Ekologi", "fj": "生態学", "aff": null, "s": "Meneliti dampak pengasaman laut dan perubahan iklim terhadap komunitas makhluk hidup di laut.", "sj": "海洋の生物群集に対する海洋酸性化と気候変動の影響", "k": ["climate change", "ocean acidification", "marine heatwaves", "community shifts", "community ecology"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000004231", "lab": null, "en": false, "rec": false, "loc": "Lokasi lab: Shimoda Marine Research Center (Shizuoka), bukan kampus utama Tsukuba.", "warn": null, "mitra": false}, {"n": "Shota Masumoto", "j": "増本 翔太", "r": "Asisten Profesor", "f": "Ekologi", "fj": "生態学", "aff": null, "s": "Meneliti hubungan antara tumbuhan dan jamur serta bagaimana komunitas mereka terbentuk. (Situs ini adalah situs pribadi, bukan situs lab.)", "sj": "植物と菌類の相互作用および群集形成に関する研究", "k": ["community ecology", "microbial ecology", "plant-fungal interactions", "fungal communities"], "pu": "https://trios.tsukuba.ac.jp/ja/researchers/0000004639", "lab": "https://sites.google.com/view/shota-m/home", "en": true, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Akira Kikuchi", "j": "菊池 彰", "r": "Profesor", "f": "Tumbuhan: Perkembangan & Fisiologi", "fj": "植物発生・生理学", "aff": null, "s": "Meneliti cara tumbuhan merespons stres lingkungan (kekeringan, garam, dll.) dan mengembangkan tanaman pangan yang lebih tahan.", "sj": "高等植物の環境ストレス応答機構の解明と耐性作物の作出", "k": ["plant physiology", "morphogenesis", "stress response", "transgenic plants", "plant breeding"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000001387", "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Iwane Suzuki", "j": "鈴木 石根", "r": "Profesor", "f": "Tumbuhan: Perkembangan & Fisiologi", "fj": "植物発生・生理学", "aff": null, "s": "Meneliti fotosintesis dan respons mikroalga terhadap lingkungan, untuk menghasilkan bahan bermanfaat serta teknik pemuliaan baru.", "sj": "光合成による物質生産、微細藻類の環境応答、15N共鳴核反応を用いた新規育種技術", "k": ["cyanobacteria", "photosynthesis", "environmental response", "two-component signal transduction", "gene expression"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000001196", "lab": "http://plmet.biol.tsukuba.ac.jp/index.html", "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Takuya Suzaki", "j": "壽崎 拓哉", "r": "Profesor", "f": "Tumbuhan: Perkembangan & Fisiologi", "fj": "植物発生・生理学", "aff": null, "s": "Meneliti mekanisme molekuler kerja sama tumbuhan polong-polongan dengan bakteri bintil akar yang mengikat nitrogen.", "sj": "植物-微生物相互作用の分子機構", "k": ["root nodule symbiosis", "plant-microbe interactions", "nitrogen nutrition", "nitrate response", "legumes (Lotus japonicus)", "transcription factors"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000003814", "lab": "https://suzaki-laboratory.jp", "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Yoshiaki Maeda", "j": "前田 義昌", "r": "Profesor Madya", "f": "Tumbuhan: Perkembangan & Fisiologi", "fj": "植物発生・生理学", "aff": null, "s": "Menganalisis genom mikroalga dan merekayasanya untuk menghasilkan bahan berguna serta membersihkan lingkungan. (Satu lab dengan Prof. Suzuki.)", "sj": "微細藻類のゲノム解析・遺伝子工学、微細藻類を用いた有用物質生産と環境浄化", "k": ["applied microbiology", "molecular biology", "genomics", "biotechnology", "microalgae"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000004617", "lab": "http://plmet.biol.tsukuba.ac.jp/index.html", "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Ayumi Minoda", "j": "蓑田 歩", "r": "Asisten Profesor", "f": "Tumbuhan: Perkembangan & Fisiologi", "fj": "植物発生・生理学", "aff": null, "s": "Meneliti bagaimana organisme berfotosintesis dan mikroba yang hidup di lingkungan ekstrem (misalnya sangat asam/panas) beradaptasi. (Satu lab dengan Prof. Suzuki.)", "sj": "光合成生物の環境応答、極限環境微生物の生理学", "k": ["photosynthesis", "primary metabolism", "chloroplast", "environmental response", "microalgae", "extremophiles"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000003189", "lab": "http://plmet.biol.tsukuba.ac.jp/index.html", "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Louis John Irving", "j": "イルビング ルイス ジョン", "r": "Asisten Profesor", "f": "Tumbuhan: Perkembangan & Fisiologi", "fj": "植物発生・生理学", "aff": null, "s": "Meneliti tumbuhan parasit dan strategi pertumbuhan tumbuhan, termasuk persaingan karbon/nitrogen dengan tanaman polong-polongan. (Lab berbahasa Inggris.)", "sj": "寄生植物。植物生育戦略。植物の生産性", "k": ["parasitic plants", "plant ecophysiology", "carbon/nitrogen interactions", "legumes", "plant productivity"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000001175", "lab": "https://louisirving.wixsite.com/plant-ecophys", "en": true, "rec": true, "loc": null, "warn": null, "mitra": false}, {"n": "Yasunori Sasakura", "j": "笹倉 靖徳", "r": "Profesor", "f": "Hewan: Perkembangan & Fisiologi", "fj": "動物発生・生理学", "aff": null, "s": "Meneliti bagaimana hewan laut ascidian (sea squirt/ascidia) berkembang dari embrio, mengalami metamorfosis, dan berevolusi, sebagai model kerabat dekat vertebrata.", "sj": "ホヤを中心にした脊索動物の発生・変態・進化メカニズムの解明", "k": ["Developmental biology", "Developmental genetics", "Marine invertebrates", "Ascidians", "Genome biology"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000001200", "lab": null, "en": false, "rec": false, "loc": "Lokasi lab: Shimoda Marine Research Center (Shizuoka), bukan kampus utama Tsukuba.", "warn": null, "mitra": false}, {"n": "Chikafumi Chiba", "j": "千葉 親文", "r": "Profesor", "f": "Hewan: Perkembangan & Fisiologi", "fj": "動物発生・生理学", "aff": null, "s": "Meneliti bagaimana hewan seperti kadal air (newt) dapat menumbuhkan kembali bagian tubuh yang hilang, misalnya retina mata.", "sj": "動物の体再生メカニズム", "k": ["Neuroscience", "Regenerative physiology", "Regenerative biology", "Laboratory animal science"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000001184", "lab": "http://www.biol.tsukuba.ac.jp/~chichiba/", "en": false, "rec": false, "loc": null, "warn": "Menurut TRIOS, saat ini juga menjabat sebagai Wakil Rektor. Tanyakan apakah menerima mahasiswa baru.", "mitra": false}, {"n": "Ryusuke Niwa", "j": "丹羽 隆介", "r": "Profesor", "f": "Hewan: Perkembangan & Fisiologi", "fj": "動物発生・生理学", "aff": null, "s": "Meneliti bagaimana saraf, hormon, dan organ saling berkomunikasi untuk mengatur pertumbuhan dan keseimbangan tubuh serangga (lalat buah), termasuk interaksi dengan parasit.", "sj": "動物の恒常性・発生・寄生を司る神経・ホルモン・臓器連環の研究", "k": ["Steroid hormone (ecdysone)", "Drosophila melanogaster", "Developmental timing", "Lipid metabolism", "Parasitoid wasp", "Reproductive dormancy"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000001425", "lab": "https://www1.tara.tsukuba.ac.jp/projects/niwa/", "en": true, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Shunsuke Yaguchi", "j": "谷口 俊介", "r": "Profesor", "f": "Hewan: Perkembangan & Fisiologi", "fj": "動物発生・生理学", "aff": null, "s": "Meneliti bagaimana embrio bulu babi (landak laut) merespons cahaya tanpa mata, dan bagaimana sel saraf yang berperan di dalamnya terbentuk.", "sj": "ウニにおける非視覚的光応答およびそれを担う神経形成メカニズムの解析", "k": ["Sea urchin", "Evo-Devo", "Neurogenesis", "Cell fate specification", "Axis formation", "Genomics"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000001420", "lab": "https://sites.google.com/site/yaguchisea/home", "en": true, "rec": true, "loc": "Lokasi lab: Shimoda Marine Research Center (Shizuoka), bukan kampus utama Tsukuba.", "warn": null, "mitra": false}, {"n": "Naoki Okamoto", "j": "岡本 直樹", "r": "Profesor Madya", "f": "Hewan: Perkembangan & Fisiologi", "fj": "動物発生・生理学", "aff": null, "s": "Meneliti bagaimana sistem saraf dan hormon mengatur pertumbuhan dan perilaku serangga.", "sj": "昆虫の発生と行動を調節する神経‐内分泌機構の研究", "k": [], "pu": "https://trios.tsukuba.ac.jp/researcher/0000004423", "lab": null, "en": false, "rec": false, "loc": null, "warn": "Menurut profil TRIOS, dosen ini sudah tidak bekerja di Universitas Tsukuba. Daftar resmi mungkin belum diperbarui.", "mitra": false}, {"n": "Yuko Shimada-Niwa", "j": "島田 裕子", "r": "Profesor Madya", "f": "Hewan: Perkembangan & Fisiologi", "fj": "動物発生・生理学", "aff": null, "s": "Meneliti bagaimana saraf dan hormon mengatur kapan serangga tumbuh dan menjadi dewasa.", "sj": "昆虫の発育と成熟を司る神経内分泌機構の研究", "k": ["Insect steroid hormone", "Ecdysteroid biosynthesis", "Developmental timing", "Drosophila melanogaster", "Serotonergic neurons"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000004017", "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Yuki Ishikawa", "j": "石川 由希", "r": "Profesor Madya", "f": "Hewan: Perkembangan & Fisiologi", "fj": "動物発生・生理学", "aff": null, "s": "Meneliti hubungan antara otak/sistem saraf dan perilaku serangga (misalnya pendengaran dan komunikasi lalat buah) serta perkembangan bentuk tubuh serangga.", "sj": "", "k": ["Insect neuroethology", "Drosophila auditory circuits", "Termite/stag beetle development"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000005243", "lab": "https://sites.google.com/view/yukiishikawa", "en": true, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Keisuke Sakurai", "j": "櫻井 啓輔", "r": "Asisten Profesor", "f": "Hewan: Perkembangan & Fisiologi", "fj": "動物発生・生理学", "aff": null, "s": "Meneliti bagaimana mata hewan menangkap cahaya dan bagaimana sinyal itu diteruskan oleh sel saraf.", "sj": "動物の光受容と神経伝達機構の研究", "k": ["Photoreception", "Duplex vision", "Neurotransmission", "In vivo genome editing"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000003317", "lab": "https://sakuraik.bitbucket.io/index.html", "en": true, "rec": true, "loc": null, "warn": null, "mitra": false}, {"n": "Martin Miguel Casco Robles", "j": "カスコ ロブレス マルティン ミゲル", "r": "Asisten Profesor", "f": "Hewan: Perkembangan & Fisiologi", "fj": "動物発生・生理学", "aff": null, "s": "Meneliti bagaimana sel glia (sel pendukung saraf) pada kadal air dewasa membantu regenerasi jaringan saraf.", "sj": "イモリ成体グリア細胞の再生生理学", "k": ["Regenerative physiology", "Regenerative biology", "Organoid research", "Genetic engineering", "Laboratory animal science"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000004373", "lab": "https://sites.google.com/view/labregenerativephysiology/home", "en": true, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Daichi G. Suzuki", "j": "鈴木 大地", "r": "Asisten Profesor", "f": "Hewan: Perkembangan & Fisiologi", "fj": "動物発生・生理学", "aff": null, "s": "Meneliti evolusi sistem saraf, perilaku, dan 'pikiran' vertebrata dengan mempelajari ikan primitif tanpa rahang seperti lamprey (belut lamprey) dan hagfish.", "sj": "円口類を主に用いた、脊椎動物の神経系・行動・心の進化の研究", "k": ["Lamprey", "Hagfish", "Evolutionary developmental biology", "Behavioral neurobiology", "Visual/olfactory system"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000004496", "lab": "https://suzdglab.wordpress.com/", "en": false, "rec": true, "loc": null, "warn": null, "mitra": false}, {"n": "Toshiyuki Harumoto", "j": "春本 敏之", "r": "Asisten Profesor", "f": "Hewan: Perkembangan & Fisiologi", "fj": "動物発生・生理学", "aff": null, "s": "Meneliti bagaimana bakteri yang hidup di dalam tubuh serangga dapat memanipulasi reproduksi inangnya, dan mekanisme molekulernya.", "sj": "昆虫の共生微生物による生殖操作の分子機構", "k": ["Wolbachia", "Spiroplasma", "Symbiotic bacteria", "Reproductive manipulation", "Drosophila", "Endosymbiosis"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000005047", "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Kazuo Inaba", "j": "稲葉 一男", "r": "Profesor", "f": "Biologi Sel Molekuler", "fj": "分子細胞生物学", "aff": null, "s": "Meneliti struktur, cara bergerak, dan evolusi silia dan flagela (rambut/ekor mikroskopis sel, misalnya ekor sperma).", "sj": "真核生物の繊毛・鞭毛の構造、運動、進化", "k": ["Cilia and flagella", "Ciliary motility", "Dynein", "Sperm/fertilization", "Cytoskeleton", "Marine biology"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000001201", "lab": "https://inaba-lab-shimoda.jimdofree.com", "en": true, "rec": true, "loc": "Lokasi lab: Shimoda Marine Research Center (Shizuoka), bukan kampus utama Tsukuba.", "warn": null, "mitra": false}, {"n": "Tomoki Chiba", "j": "千葉 智樹", "r": "Profesor", "f": "Biologi Sel Molekuler", "fj": "分子細胞生物学", "aff": null, "s": "Meneliti bagaimana sel memilih dan menghancurkan protein tertentu (sistem ubiquitin) untuk mengatur fungsi tubuh.", "sj": "選択的タンパク質分解による生体機能制御の研究", "k": ["Ubiquitin", "Protein degradation", "Posttranslational modification", "Stress response"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000001198", "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Kentaro Nakano", "j": "中野 賢太郎", "r": "Profesor", "f": "Biologi Sel Molekuler", "fj": "分子細胞生物学", "aff": null, "s": "Meneliti 'kerangka' di dalam sel (sitoskeleton) dan bagaimana kerangka ini diatur untuk membentuk sel, membelah, dan bergerak.", "sj": "細胞骨格の機能とその時空間的制御機構の解析", "k": ["Cytoskeleton", "Cell division", "Cell morphogenesis", "Cell motility", "Membrane traffic", "Phagocytosis"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000001159", "lab": "http://www.biol.tsukuba.ac.jp/organelle/index.htm", "en": true, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Kenji Miura", "j": "三浦 謙治", "r": "Profesor", "f": "Biologi Sel Molekuler", "fj": "分子細胞生物学", "aff": null, "s": "Menggunakan tanaman untuk memproduksi protein obat, membuat tanaman hasil penyuntingan genom (genome editing), dan meneliti sistem sinyal di dalam tanaman.", "sj": "医療関連タンパク質生産および機能解析、ゲノム編集作物の作出植物のシグナル伝達機構の解明", "k": ["Plant molecular biology", "Plant physiology", "Plant biotechnology", "Genome editing", "Recombinant protein production"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000001424", "lab": "https://sites.google.com/view/tsukubapmcb", "en": true, "rec": true, "loc": null, "warn": null, "mitra": false}, {"n": "Kazutoshi Tani", "j": "谷 一寿", "r": "Profesor", "f": "Biologi Sel Molekuler", "fj": "分子細胞生物学", "aff": null, "s": "Meneliti bentuk 3D protein membran dari bakteri fotosintetik menggunakan mikroskop elektron cryo, untuk memahami hubungan bentuk dan fungsinya.", "sj": "光合成細菌由来の膜タンパク質を中心とした構造機能相関の解明", "k": ["Cryo-electron microscopy", "Protein 3D structure", "Anoxygenic phototrophic bacteria", "Membrane proteins"], "pu": "https://trios.tsukuba.ac.jp/ja/researcher/0000004875", "lab": "https://www.cryoem-tokai.jp/", "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Kaori Ishikawa", "j": "石川 香", "r": "Profesor Madya", "f": "Biologi Sel Molekuler", "fj": "分子細胞生物学", "aff": null, "s": "Meneliti fungsi mitokondria ('pembangkit energi' sel) dan DNA mitokondria pada mamalia.", "sj": "哺乳類ミトコンドリア及びミトコンドリアゲノムの機能解析", "k": ["Mitochondria", "Mitochondrial DNA", "Cell biology"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000003578", "lab": "http://www.biol.tsukuba.ac.jp/nakada_ishikawa/index.html", "en": false, "rec": true, "loc": null, "warn": null, "mitra": false}, {"n": "Fuminori Tsuruta", "j": "鶴田 文憲", "r": "Asisten Profesor", "f": "Biologi Sel Molekuler", "fj": "分子細胞生物学", "aff": null, "s": "Meneliti bagaimana sel glia (sel pendukung di otak) mengatur fungsi otak, termasuk kaitannya dengan peradangan saraf dan gangguan perkembangan.", "sj": "グリア細胞による脳機能制御の研究", "k": ["Microglia", "Astrocyte", "Synapse", "Neuroinflammation", "Developmental disorder"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000001180", "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Shohei Nosaki", "j": "野﨑 翔平", "r": "Asisten Profesor", "f": "Biologi Sel Molekuler", "fj": "分子細胞生物学", "aff": null, "s": "Meneliti bentuk 3D dan fungsi protein yang menyampaikan sinyal di dalam tanaman.", "sj": "植物におけるシグナル伝達因子の構造機能解析", "k": ["Plant signal transduction", "Transcription factors", "Protein 3D structure", "Biotechnology"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000004447", "lab": "https://gene.t-pirc.tsukuba.ac.jp/research/nosaki/", "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Yoshihisa Hirakawa", "j": "平川 泰久", "r": "Asisten Profesor", "f": "Biologi Sel Molekuler", "fj": "分子細胞生物学", "aff": null, "s": "Meneliti bagaimana kloroplas (organ fotosintesis) pada alga berevolusi, termasuk melalui proses sel menelan sel lain (endosimbiosis).", "sj": "藻類の色素体進化に関する研究", "k": ["Algae", "Chloroplast/plastid evolution", "Endosymbiosis", "Genome evolution", "Carbon fixation"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000003318", "lab": "http://yhirakawa.weebly.com", "en": true, "rec": true, "loc": null, "warn": null, "mitra": false}, {"n": "Yuji Inagaki", "j": "稲垣 祐司", "r": "Profesor", "f": "Informatika Genom", "fj": "ゲノム情報学", "aff": null, "s": "Meneliti hubungan evolusi (pohon kekerabatan) organisme eukariota dan menganalisis fungsi protein menggunakan komputer.", "sj": "真核生物分子系統、in silico タンパク質の機能解析等", "k": ["eukaryotes", "organelle evolution", "molecular phylogeny", "genome evolution", "lateral gene transfer"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000001144", "lab": "http://sites.google.com/site/yujiswebsite/Home", "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Yasuteru Shigeta", "j": "重田 育照", "r": "Profesor", "f": "Informatika Genom", "fj": "ゲノム情報学", "aff": null, "s": "Menjelaskan cara kerja sistem kehidupan secara teori dengan simulasi komputer (kimia/fisika komputasi).", "sj": "生体システム(生命)の理論的解明", "k": ["first-principles calculation", "molecular dynamics", "biophysics", "theoretical chemistry"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000000539", "lab": "http://www2.ccs.tsukuba.ac.jp/people/shigeta/shigeta_personal/Message.html", "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Shuji Shigenobu", "j": "重信 秀治", "r": "Profesor", "f": "Informatika Genom", "fj": "ゲノム情報学", "aff": null, "s": "Menganalisis genom dan memakai bioinformatika untuk memahami simbiosis (hidup bersama antar organisme, misalnya kutu daun dan bakteri) serta evolusinya.", "sj": "ゲノム解析、バイオインフォマティクス、共生と進化", "k": ["genomics", "bioinformatics", "symbiosis", "evolution", "aphid–Buchnera"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000004944", "lab": "https://www.shigenobulab.org/en/", "en": true, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Kazuto Nakada", "j": "中田 和人", "r": "Profesor", "f": "Informatika Genom", "fj": "ゲノム情報学", "aff": null, "s": "Meneliti fungsi dan bentuk mitokondria (pembangkit energi sel) serta penyakit akibat mutasi DNA mitokondria, menggunakan tikus model.", "sj": "ミトコンドリアの機能形態学的研究", "k": ["mitochondria", "mtDNA mutations", "respiration defects", "model mice", "mitochondrial disease"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000001193", "lab": "http://www.biol.tsukuba.ac.jp/nakada_ishikawa/", "en": false, "rec": true, "loc": null, "warn": null, "mitra": false}, {"n": "Kouji Nakamura", "j": "中村 幸治", "r": "Profesor", "f": "Informatika Genom", "fj": "ゲノム情報学", "aff": null, "s": "Meneliti bagaimana molekul RNA mengatur aktivitas gen pada bakteri (misalnya bakteri natto) dan bagaimana virus bakteri (fag) menginfeksi.", "sj": "機能RNA分子による新規遺伝子発現制御機構の解析、ファージによる不稔感染制御機構の解析", "k": ["Bacillus subtilis", "natto bacteria", "noncoding RNA", "RNomics", "bacteriophage"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000001179", "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Hidekazu Kuwayama", "j": "桑山 秀一", "r": "Profesor", "f": "Informatika Genom", "fj": "ゲノム情報学", "aff": null, "s": "Mempelajari bagaimana sel/organisme mengatur dirinya membentuk struktur (swaorganisasi) berdasarkan informasi genetik.", "sj": "遺伝子情報を基盤とした自己組織化の解析", "k": ["molecular biology", "genome biology", "biotechnology", "self-organization"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000001199", "lab": "http://www.biol.tsukuba.ac.jp/~hidekuwayama/index.html", "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Kyoichi Sawamura", "j": "澤村 京一", "r": "Profesor Madya", "f": "Informatika Genom", "fj": "ゲノム情報学", "aff": null, "s": "Meneliti evolusi molekuler lalat buah (Drosophila), terutama bagaimana spesies baru terbentuk dan saling mengenali.", "sj": "種の認識からみたショウジョウバエの分子進化", "k": ["speciation", "Drosophila", "molecular evolution", "reproductive isolation"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000001148", "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Ryuhei Harada", "j": "原田 隆平", "r": "Profesor Madya", "f": "Informatika Genom", "fj": "ゲノム情報学", "aff": null, "s": "Menganalisis fungsi protein dengan simulasi komputer gerakan molekul (dinamika molekul).", "sj": "生体分子シミュレーションによるタンパク質の機能解析", "k": ["molecular dynamics simulation", "biophysics", "protein function", "computational chemistry"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000004109", "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Nozomi Ytow", "j": "伊藤 希", "r": "Lektor", "f": "Informatika Genom", "fj": "ゲノム情報学", "aff": null, "s": "Membangun dasar logika, teori, dan informatika untuk biologi, misalnya basis data taksonomi dan penamaan makhluk hidup.", "sj": "生物学に関する論理的・理論的・情報論的基礎づけ", "k": ["biodiversity informatics", "taxonomic databases", "nomenclature", "ontology", "rough set theory"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000001147", "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Takuro Nakayama", "j": "中山 卓郎", "r": "Asisten Profesor", "f": "Informatika Genom", "fj": "ゲノム情報学", "aff": null, "s": "Mempelajari simbiosis, evolusi, dan keanekaragaman mikroba (terutama protista) melalui analisis genom.", "sj": "ゲノム解析を通じた微生物の共生・進化・多様性に関する研究", "k": ["endosymbiosis", "organelle evolution", "protists", "genome reduction", "phylogenomics"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000004542", "lab": "https://www.u.tsukuba.ac.jp/~nakayama.takuro.gb/", "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Shunta Yorimoto", "j": "頼本 隼汰", "r": "Asisten Profesor", "f": "Informatika Genom", "fj": "ゲノム情報学", "aff": null, "s": "Meneliti mekanisme molekuler dan evolusi interaksi antar organisme seperti simbiosis, parasitisme, dan perilaku sosial (misalnya pada kutu daun).", "sj": "共生・寄生・社会性などの生物間相互作用の分子機構・進化の研究", "k": ["bioinformatics", "symbiosis", "aphids", "evolutionary biology"], "pu": "https://trios.tsukuba.ac.jp/ja/researcher/0000004889", "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Yoshihide Tokunou", "j": "徳納 吉秀", "r": "Asisten Profesor", "f": "Informatika Genom", "fj": "ゲノム情報学", "aff": null, "s": "Mengamati mikroba dengan mikroskop untuk mempelajari ekologinya, lingkungan, dan kemampuan bakteri menghasilkan listrik.", "sj": "顕微鏡観察を基盤とする微生物の生態学・環境学・電気化学的研究", "k": ["biofilm 3D imaging", "microbial biotechnology", "electricity-generating bacteria", "gut bacteria", "microbial infection"], "pu": "https://trios.tsukuba.ac.jp/ja/researcher/0000004401", "lab": "https://sites.google.com/view/tokunoulab", "en": false, "rec": true, "loc": null, "warn": null, "mitra": false}, {"n": "Shigekatsu Suzuki", "j": "鈴木 重勝", "r": "Asisten Profesor", "f": "Informatika Genom", "fj": "ゲノム情報学", "aff": null, "s": "Meneliti keragaman genom mikroba eukariota (seperti alga) dan mekanisme molekuler interaksi antarindividu dan antarspesies.", "sj": "真核微生物のゲノム多様性とその個体間・種間相互作用の分子機構の研究", "k": ["protists", "algae", "genome evolution", "species interactions"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000005116", "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Yuzuru Ito", "j": "伊藤 弓弦", "r": "Profesor", "f": "Biologi Sel Lanjut (mitra)", "fj": "先端細胞生物科学", "aff": null, "s": "Mengembangkan teknologi dasar kedokteran regeneratif menggunakan sel punca manusia (sel iPS dan sel punca dewasa).", "sj": "ヒトiPS/体性幹細胞を用いた再生医療基盤技術の研究", "k": ["regenerative medicine", "stem cells", "iPS cells", "cell biology"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000004473", "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}, {"n": "Kisaburo Nagamune", "j": "永宗 喜三郎", "r": "Profesor (mitra)", "f": "Biologi Sel Lanjut (mitra)", "fj": "先端細胞生物科学", "aff": "国立感染症研究所 (NIID; now part of JIHS)", "s": "Meneliti bagaimana protozoa parasit (misalnya Toxoplasma) berhasil menginfeksi inangnya.", "sj": "寄生性原生生物の感染成立機構の解明", "k": ["parasitic protozoa", "Toxoplasma", "host infection mechanism", "parasitology"], "pu": "https://researchmap.jp/read0191260/", "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": true}, {"n": "Kyonoshin Maruyama", "j": "圓山 恭之進", "r": "Profesor (mitra)", "f": "Biologi Sel Lanjut (mitra)", "fj": "先端細胞生物科学", "aff": "国際農林水産業研究センター (JIRCAS)", "s": "Membandingkan genom sumber daya genetik tanaman seperti padi untuk menemukan gen yang berguna (misalnya tahan cekaman lingkungan).", "sj": "イネ等の遺伝資源の比較ゲノム研究", "k": ["rice", "plant genetic resources", "comparative genomics", "abiotic stress tolerance"], "pu": "https://researchmap.jp/jircasbio/", "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": true}, {"n": "Takato Takenouchi", "j": "竹之内 敬人", "r": "Profesor (mitra)", "f": "Biologi Sel Lanjut (mitra)", "fj": "先端細胞生物科学", "aff": "農業・食品産業技術総合研究機構 (NARO)", "s": "Membuat dan memanfaatkan galur sel imun mamalia (misalnya makrofag babi dan sapi) untuk penelitian penyakit ternak.", "sj": "哺乳類免疫細胞株の作製と活用", "k": ["macrophages", "microglia", "immune cell lines", "livestock disease resistance", "cell culture"], "pu": "https://researchmap.jp/ttakenouchi", "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": true}, {"n": "Hiroshi Shitara", "j": "設樂 浩志", "r": "Profesor Madya (mitra)", "f": "Biologi Sel Lanjut (mitra)", "fj": "先端細胞生物科学", "aff": "東京都医学総合研究所", "s": "Meneliti cara pewarisan DNA mitokondria dari induk ke keturunan dengan pendekatan genetika molekuler.", "sj": "ミトコンドリアDNAの遺伝様式・機構に関する分子遺伝学的解析", "k": ["mitochondrial DNA", "maternal inheritance", "molecular genetics", "mouse genetics"], "pu": "https://researchmap.jp/read0166096", "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": true}, {"n": "Akinori Yabuki", "j": "矢吹 彬憲", "r": "Profesor Madya (mitra)", "f": "Biologi Sel Lanjut (mitra)", "fj": "先端細胞生物科学", "aff": "海洋研究開発機構 (JAMSTEC)", "s": "Menemukan dan mengklasifikasikan keanekaragaman mikroba eukariota (protista), termasuk dari laut dalam.", "sj": "真核微生物の多様性把握と系統分類", "k": ["protists", "eukaryotic microbes", "biodiversity", "phylogeny", "taxonomy", "deep-sea biology"], "pu": "https://researchmap.jp/Palpitomonas", "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": true}, {"n": "Tomomi Inoue", "j": "井上 智美", "r": "Profesor (mitra)", "f": "Biologi Sel Lanjut (mitra)", "fj": "先端細胞生物科学", "aff": "国立環境研究所 (NIES)", "s": "Mempelajari fisiologi dan ekologi tumbuhan, terutama pohon.", "sj": "主に樹木を対象とした植物生理生態学", "k": ["plant ecophysiology", "trees", "forest ecology"], "pu": null, "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": true}, {"n": "Akihiro Okamoto", "j": "岡本 章玄", "r": "Profesor (mitra)", "f": "Biologi Molekuler Lanjut (mitra)", "fj": "先端分子生物科学", "aff": "物質・材料研究機構 (NIMS)", "s": "Meneliti bagaimana 'bakteri listrik' dapat menghasilkan arus listrik.", "sj": "電気バクテリアの発電メカニズム研究", "k": ["electrochemically active bacteria", "microbial electrochemistry", "electrochemical nanobiotechnology", "geobiology"], "pu": "https://researchmap.jp/okamoto_akihiro", "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": true}, {"n": "Norio Tanaka", "j": "田中 法生", "r": "Profesor (mitra)", "f": "Biologi Molekuler Lanjut (mitra)", "fj": "先端分子生物科学", "aff": "国立科学博物館", "s": "Meneliti klasifikasi dan hubungan evolusi tumbuhan air.", "sj": "水生植物の系統分類学的研究", "k": ["aquatic plants", "plant systematics", "phylogeny", "taxonomy"], "pu": null, "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": true}, {"n": "Yuko Tajima", "j": "田島 木綿子", "r": "Profesor Madya (mitra)", "f": "Biologi Molekuler Lanjut (mitra)", "fj": "先端分子生物科学", "aff": "国立科学博物館", "s": "Meneliti siklus hidup mamalia laut seperti paus dan lumba-lumba.", "sj": "海棲哺乳類の生活史研究", "k": ["marine mammals", "life history", "stranding", "cetaceans"], "pu": "https://researchmap.jp/marinemammals", "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": true}, {"n": "Kentaro Hosaka", "j": "保坂 健太郎", "r": "Profesor Madya (mitra)", "f": "Biologi Molekuler Lanjut (mitra)", "fj": "先端分子生物科学", "aff": "国立科学博物館", "s": "Meneliti klasifikasi jamur, evolusinya, dan sebaran geografisnya.", "sj": "菌類の分類・系統進化・生物地理学", "k": ["fungi", "mycology", "taxonomy", "phylogeny", "biogeography"], "pu": null, "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": true}, {"n": "Sumire Fujiwara", "j": "藤原 すみれ", "r": "Profesor Madya (mitra)", "f": "Biologi Molekuler Lanjut (mitra)", "fj": "先端分子生物科学", "aff": "産業技術総合研究所 (AIST)", "s": "Meneliti bagaimana tumbuhan mengatur aktif-tidaknya gen-gennya.", "sj": "高等植物の遺伝子発現制御メカニズムに関する研究", "k": ["plant gene expression", "transcription factors", "gene regulation", "plant molecular biology"], "pu": "https://researchmap.jp/read0152307", "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": true}, {"n": "Shigeharu Moriya", "j": "守屋 繁春", "r": "Profesor Madya (mitra)", "f": "Biologi Molekuler Lanjut (mitra)", "fj": "先端分子生物科学", "aff": "理化学研究所 (RIKEN)", "s": "Meneliti pemanfaatan biomassa, misalnya lewat mikroba simbion rayap dan analisis meta-omik.", "sj": "バイオマス利活用に関する研究開発", "k": ["termite symbiosis", "biomass", "meta-omics", "biofilm", "ecosystem services"], "pu": "https://researchmap.jp/smoriya", "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": true}, {"n": "Yoko Chiba", "j": "千葉 洋子", "r": "Profesor Madya (mitra)", "f": "Biologi Molekuler Lanjut (mitra)", "fj": "先端分子生物科学", "aff": "理化学研究所 (RIKEN)", "s": "Mencari jalur metabolisme dan enzim baru pada mikroba prokariota (bakteri dan arkea).", "sj": "原核微生物の有する新規代謝・酵素の探索", "k": ["prokaryotes", "novel metabolism", "enzymes", "archaea", "biochemistry"], "pu": "https://researchmap.jp/yokochiba/", "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": true}, {"n": "Hiroki Iwashita", "j": "岩下 弘樹", "r": "Profesor Madya (mitra)", "f": "Biologi Molekuler Lanjut (mitra)", "fj": "先端分子生物科学", "aff": "武田薬品工業株式会社", "s": "Meneliti mekanisme molekuler penyakit saraf dan pengembangan obatnya (di perusahaan farmasi).", "sj": "神経疾患の分子機構と創薬研究", "k": ["neurological disorders", "drug discovery", "molecular mechanisms", "neuroscience"], "pu": null, "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": true}, {"n": "Matthew Christopher Wood", "j": "マシュー クリストファー ウッド", "r": "Asisten Profesor", "f": "Komunikasi Sains", "fj": "サイエンスコミュニケーション", "aff": null, "s": "Meneliti komunikasi sains secara visual, persepsi publik terhadap sains, dan sains di media.", "sj": "Visual communication of science; public perceptions of science; science in the media", "k": ["science communication", "visual communication", "diagrams", "public perception of science", "science in the media"], "pu": "https://trios.tsukuba.ac.jp/researcher/0000001166", "lab": null, "en": false, "rec": false, "loc": null, "warn": null, "mitra": false}];
+const FIELDS = [...new Set(FAC.map(d=>d.f))];
+const state = {q:'', field:null, flags:new Set()};
+const FLAGS = [
+  {id:'lab', label:'Punya situs lab', test:d=>!!d.lab},
+  {id:'en', label:'Situs lab berbahasa Inggris', test:d=>d.en},
+  {id:'rec', label:'Rekrut mahasiswa', test:d=>d.rec},
+  {id:'main', label:'Dosen kampus (bukan mitra)', test:d=>!d.mitra}
+];
+const esc = s => String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function chip(label, pressed, onClick){const b=document.createElement('button');b.type='button';b.className='chip';b.textContent=label;b.setAttribute('aria-pressed',pressed);b.addEventListener('click',onClick);return b;}
+function renderChips(){
+  const fc=document.getElementById('fieldChips'); fc.innerHTML='';
+  fc.appendChild(chip('Semua bidang', state.field===null, ()=>{state.field=null;render();}));
+  FIELDS.forEach(f=>fc.appendChild(chip(f+' ('+FAC.filter(d=>d.f===f).length+')', state.field===f, ()=>{state.field=state.field===f?null:f;render();})));
+  const gc=document.getElementById('flagChips'); gc.innerHTML='';
+  FLAGS.forEach(fl=>gc.appendChild(chip(fl.label, state.flags.has(fl.id), ()=>{state.flags.has(fl.id)?state.flags.delete(fl.id):state.flags.add(fl.id);render();})));
+}
+function card(d){
+  const badges=[];
+  if(d.rec) badges.push('<span class="tag t-ok">rekrut mahasiswa</span>');
+  if(d.en) badges.push('<span class="tag t-unk">situs EN</span>');
+  if(d.mitra) badges.push('<span class="tag t-est">dosen mitra</span>');
+  if(d.warn) badges.push('<span class="tag t-warn">cek dulu</span>');
+  const links=[];
+  if(d.pu) links.push('<a href="'+esc(d.pu)+'" target="_blank" rel="noopener">Profil</a>');
+  if(d.lab) links.push('<a href="'+esc(d.lab)+'" target="_blank" rel="noopener">Situs lab</a>');
+  return '<article class="card">'+
+    '<div class="nm">'+esc(d.n)+' <span class="jp">'+esc(d.j)+'</span></div>'+
+    '<div class="meta">'+esc(d.r)+' · '+esc(d.f)+(d.aff?' · '+esc(d.aff):'')+'</div>'+
+    (badges.length?'<div class="badges">'+badges.join('')+'</div>':'')+
+    '<p>'+esc(d.s)+'</p>'+
+    (d.k.length?'<div class="kw">'+d.k.map(k=>'<span>'+esc(k)+'</span>').join('')+'</div>':'')+
+    (d.loc?'<p class="note">'+esc(d.loc)+'</p>':'')+
+    (d.warn?'<p class="note w">'+esc(d.warn)+'</p>':'')+
+    '<details class="sj"><summary>Teks asli (Jepang)</summary><p>'+esc(d.sj)+'</p></details>'+
+    (links.length?'<div class="links">'+links.join('')+'</div>':'')+
+    '</article>';
+}
+function render(){
+  renderChips();
+  const q=state.q.trim().toLowerCase();
+  const list=FAC.filter(d=>(!state.field||d.f===state.field)
+    && [...state.flags].every(id=>FLAGS.find(f=>f.id===id).test(d))
+    && (!q || [d.n,d.j,d.s,d.sj,d.f,d.k.join(' ')].join(' ').toLowerCase().includes(q)));
+  document.getElementById('cards').innerHTML=list.map(card).join('') || '<p>Tidak ada dosen yang cocok. Coba hapus filter atau kata kunci.</p>';
+  document.getElementById('count').textContent=list.length+' dari '+FAC.length+' dosen';
+}
+document.getElementById('q').addEventListener('input',e=>{state.q=e.target.value;render();});
+render();
+
+// tabs
+const tabs=[['tab-a','route-a'],['tab-b','route-b']];
+tabs.forEach(([t,p])=>document.getElementById(t).addEventListener('click',()=>{
+  tabs.forEach(([t2,p2])=>{const on=t2===t;document.getElementById(t2).setAttribute('aria-selected',on);document.getElementById(p2).hidden=!on;});
+}));
+
+// copy
+document.getElementById('copyBtn').addEventListener('click',async e=>{
+  const txt=document.getElementById('mailText').textContent;
+  try{await navigator.clipboard.writeText(txt);e.target.textContent='Tersalin';}
+  catch(err){const r=document.createRange();r.selectNodeContents(document.getElementById('mailText'));const s=getSelection();s.removeAllRanges();s.addRange(r);e.target.textContent='Teks dipilih, tekan Ctrl+C';}
+  setTimeout(()=>e.target.textContent='Salin template',2500);
+});
+</script>
+
+</body>
+</html>
